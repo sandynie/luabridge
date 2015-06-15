@@ -234,7 +234,7 @@ namespace cpplua{
 		stUserData():m_Ptr(NULL),m_DelWhenGC(true){}
 		stUserData(T* pObj, bool bDelWhenGC = true):m_Ptr(pObj),m_DelWhenGC(bDelWhenGC){}
 		~stUserData(){
-			if (m_DelWhenGC)
+			if (m_DelWhenGC && m_Ptr!=NULL)
 			{
 				delete m_Ptr;
 			}
